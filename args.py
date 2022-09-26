@@ -84,13 +84,11 @@ def parser():
     # Loss Function
     parser.add_argument('-c',
                         '--criterion',
-                        metavar='LOSS',
                         default='l1_s12',
                         choices=['l1_s12','l2_s12','l1','l2'],
                         help='PCN loss function, l1 and l2 calculate s012 (default: l1_S12)')
     parser.add_argument('-crgb',
                         '--rgb-criterion',
-                        metavar='LOSS',
                         default='l2',
                         choices=['l2','l1'],
                         help='RGBRN loss function: (default: l2)')

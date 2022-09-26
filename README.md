@@ -94,12 +94,12 @@ CUDA_VISIBLE_DEVICES="0" python main.py -b 1 --evaluate [checkpoint-path] --data
   --s0-8bit             s0 bit length precision (default: false)
 
   # Loss Function
-  -c LOSS, --criterion LOSS
-                        l1loss function: | l2loss function: | l1_s12loss
-                        function: | l2_s12 (default: l1_S12)
-  -crgb LOSS, --rgb-criterion LOSS
-                        l1loss function: | l2 (default: l2)
-  --rank-metric {calc_admap_diff_angle,calc_aolp_diff_angle,calc_basic_metrics,calc_delta,calc_nml_diff_angle,calc_psnr,cos,data_time,delta1,delta2,delta3,diff_angle,evaluate,gpu_time,mae,mse,psnr,rmse,set_to_worst,ssim,update}
+  -c {l1_s12,l2_s12,l1,l2}, --criterion {l1_s12,l2_s12,l1,l2}
+                        PCN loss function, l1 and l2 calculate s012 (default:
+                        l1_S12)
+  -crgb {l2,l1}, --rgb-criterion {l2,l1}
+                        RGBRN loss function: (default: l2)
+  --rank-metric {rmse,mse,mae,psnr}
                         metrics for which best result is saved (default: rmse)
   --rank-metric-domain {s12,s012}
                         domain of metrics for which best result is saved
