@@ -86,20 +86,18 @@ def parser():
                         '--criterion',
                         metavar='LOSS',
                         default='l1_s12',
-                        choices=criteria.loss_names,
-                        help='loss function: | '.join(criteria.loss_names) +
-                        ' (default: l1_S12)')
+                        choices=['l1_s12','l2_s12','l1','l2'],
+                        help='PCN loss function, l1 and l2 calculate s012 (default: l1_S12)')
     parser.add_argument('-crgb',
                         '--rgb-criterion',
                         metavar='LOSS',
                         default='l2',
-                        choices=criteria.rgb_loss_names,
-                        help='loss function: | '.join(criteria.rgb_loss_names) +
-                        ' (default: l2)')
+                        choices=['l2','l1'],
+                        help='RGBRN loss function: (default: l2)')
     parser.add_argument('--rank-metric',
                         type=str,
                         default='rmse',
-                        choices=[m for m in dir(Result()) if not m.startswith('_')],
+                        choices=['rmse', 'mse', 'mae', 'psnr'],
                         help='metrics for which best result is saved (default: rmse)')
     parser.add_argument('--rank-metric-domain',
                         type=str,
