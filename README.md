@@ -1,4 +1,4 @@
-# Simultaneous Acquisition of High Quality RGB Image and Polarization Information using a Sparse Polarization Sensor(WACV 2023)
+# Simultaneous Acquisition of High Quality RGB Image and Polarization Information using a Sparse Polarization Sensor (WACV 2023)
 Teppei Kurita, Yuhi Kondo, Legong Sun and Yusuke Moriuchi\
 Sony Group Corporation, Tokyo, Japan\
 [paper]() | [dataset]()\
