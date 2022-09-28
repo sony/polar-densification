@@ -1,7 +1,7 @@
 # Simultaneous Acquisition of High Quality RGB Image and Polarization (WACV 2023)
 Teppei Kurita, Yuhi Kondo, Legong Sun and Yusuke Moriuchi\
 Sony Group Corporation, Tokyo, Japan\
-[paper]() | [dataset]()\
+paper([arxiv](https://arxiv.org/abs/2209.13106)/cvf) | [dataset](#dataset)\
 ![teaser_image](images/teaser.jpg)
 
 # SNA: Stokes Network Architecture
@@ -13,6 +13,8 @@ This implementation is based on [PENet (ICRA2021)](https://github.com/JUGGHM/PEN
 
 ## Contents
 1. [Dependency](#dependency)
+0. [Dataset](#dataset)
+0. [Directory structure](#directory-structure)
 0. [Trained Models](#trained-models)
 0. [Commands](#commands)
 0. [License](#license)
@@ -34,6 +36,21 @@ It is recommended to create a Docker Image using the Dockerfile in this code.
 pip install numpy matplotlib Pillow
 pip install scikit-image
 pip install opencv-contrib-python==4.5.2.54
+```
+
+## Dataset
+[Link](https://sonyjpn.sharepoint.com/sites/S168-RSPDataset)\
+*Access to data requires a Microsoft account. After creating your Microsoft account, please contact us with your Microsoft E-mail address to grant access. The access right is revoked after a certain period of time , and your account information is not retained.
+
+## Directory Structure
+Example.
+```
+./polar-densification
+./data/
+    |- results
+    |- rsp-dataset
+      |- train_val
+      |- eval
 ```
 
 ## Trained Models
