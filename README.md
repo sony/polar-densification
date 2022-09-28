@@ -40,7 +40,7 @@ pip install opencv-contrib-python==4.5.2.54
 
 ## Dataset
 [Link](https://sonyjpn.sharepoint.com/sites/S168-RSPDataset)\
-*Access to data requires a Microsoft account. After creating your Microsoft account, please contact us with your Microsoft E-mail address to grant access. The access right is revoked after a certain period of time , and your account information is not retained.
+*Access to data requires a Microsoft account. After creating your Microsoft account, please contact [us](mailto:Teppei.Kurita@sony.com;Yuhi.Kondo@sony.com) with your Microsoft E-mail address to grant access. The access right is revoked after a certain period of time , and your account information is not retained.
 
 ## Directory Structure
 Example.
@@ -63,13 +63,13 @@ python main.py -h
 ```
 ### Training
 ```bash
-CUDA_VISIBLE_DEVICES="0" python main.py -b 5 --data-folder [data-folder-path] --gt-folder [gt-folder-path] --result [result-folder-path] -rp [raw-pattern]
+CUDA_VISIBLE_DEVICES="0" python main.py -b 5 -rp [conv,x4,x16,x64] --data-folder [data-folder-path] --gt-folder [gt-folder-path] --result [result-folder-path]
 # -b for batch size
 ```
 
 ### Evalution
 ```bash
-CUDA_VISIBLE_DEVICES="0" python main.py -b 1 --evaluate [checkpoint-path] --data-folder [data-folder-path] --gt-folder [gt-folder-path] --result [result-folder-path] -rp [raw-pattern]
+CUDA_VISIBLE_DEVICES="0" python main.py -b 1 -rp [conv,x4,x16,x64] --evaluate [checkpoint-path] --data-folder [data-folder-path] --gt-folder [gt-folder-path] --result [result-folder-path]
 ```
 
 ### Optional arguments:
