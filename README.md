@@ -85,17 +85,34 @@ CUDA_VISIBLE_DEVICES="0" python main.py -b 1 -rp [conv,x4,x16,x64] --evaluate [c
   # Network Parameter
   --refine-input N, -ri N
                         RGB refine input [0~7] (default: 6)
+                        # - 0: Only RGB
+                        # - 1: RGB and s0sps
+                        # - 2: RGB and mask
+                        # - 3: RGB and s12sps
+                        # - 4: RGB and s0sps and mask
+                        # - 5: RGB and s12sps and mask
+                        # - 6: RGB and s012sps and mask (default)
+                        # - 7: RGB and s012sps
   --refine-model N, -rm N
                         RGB refine model [0,1] (default: 0)
+                        # - 0: RGB Refinement (default)
+                        # - 1: No Refinement
   --comp-input-rgb N, -cir N
                         Polarizaiton compensation input (RGB) [0,1] (default:
                         1)
+                        # - 0: RGB
+                        # - 1: Refine RGB (default)
   --comp-input-extra N, -cie N
                         Polarization compensation input (extra) [0~3]
                         (default: 2)
+                        # - 0: Only s12sps
+                        # - 1: s12sps and s0sps
+                        # - 2: s12sps and mask (default)
+                        # - 3: s12sps and s0sps and mask
   --comp-model N, -cm N
-                        Polarization compensation modek [0,1] (default: 1)
-
+                        Polarization compensation model [0,1] (default: 1)
+                        # - 0: Our compensation model
+                        # - 1: Our compensation model (w/ ATA&FTB) (default)
   # Hyper Parameter
   --seed N, -se N       seed value. if -1, random seed (default: -1)
   --epochs N            number of total epochs to run (default: 30)
