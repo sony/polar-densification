@@ -230,7 +230,6 @@ def main():
 
             args.start_epoch = checkpoint['epoch'] + 1
             args.data_folder = args_new.data_folder
-            args.val = args_new.val
             print("Completed. Resuming from epoch {}.".format(
                 checkpoint['epoch']))
         else:
@@ -246,7 +245,6 @@ def main():
             checkpoint = torch.load(args.evaluate, map_location=device)
             args.start_epoch = checkpoint['epoch'] + 1
             args.data_folder = args_new.data_folder
-            args.val = args_new.val
             is_eval = True
 
             print("Completed.")
