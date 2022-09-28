@@ -41,7 +41,7 @@ def parser():
                         default=1,
                         type=int,
                         metavar='N',
-                        help='Polarization compensation modek [0,1] (default: 1)')
+                        help='Polarization compensation model [0,1] (default: 1)')
 
     # Hyper Parameter
     parser.add_argument('--seed', '-se',
