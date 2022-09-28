@@ -100,7 +100,7 @@ def select_comp_model(args, m_comp_model=0, comp_rgb_ch=3, comp_extra_ch=2):
         comp_model = PCN(args, in_ch=2+comp_extra_ch, out_ch=2, rgb_ch=comp_rgb_ch, out_inter=True, pixelshuffle=False, mode_afa=2, mode_ftb=3)
     return comp_model
 
-# [genparam_int_1] Refine input
+# [args.refine_input] Refine input
 # - 0: Only RGB
 # - 1: RGB and s0sps
 # - 2: RGB and mask
@@ -109,18 +109,18 @@ def select_comp_model(args, m_comp_model=0, comp_rgb_ch=3, comp_extra_ch=2):
 # - 5: RGB and s12sps and mask
 # - 6: RGB and s012sps and mask (default)
 # - 7: RGB and s012sps
-# [genparam_int_2] Refine Model
+# [args.refine_model] Refine Model
 # - 0: RGB Refinement (default)
 # - 1: No Refinement
-# [genparam_int_3] Completion Input (RGB)
+# [args.comp_input_rgb] Completion Input (RGB)
 # - 0: RGB
 # - 1: Refine RGB (default)
-# [genparam_int_4] Completion Input (Extra)
+# [args.comp_input_extra] Completion Input (Extra)
 # - 0: Only s12sps
 # - 1: s12sps and s0sps
 # - 2: s12sps and mask (default)
 # - 3: s12sps and s0sps and mask
-# [genparam_int_5] Select Compensation Model
+# [self.args.comp_model] Select Compensation Model
 # - 0: Our compensation model
 # - 1: Our compensation model (w/ ATA&FTB) (default)
 class SNA(nn.Module):
