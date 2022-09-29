@@ -44,10 +44,10 @@ pip install opencv-contrib-python==4.5.2.54
 
 ## Trained Models
 These models are trained on a richer full dataset than rsp-dataset.
-- [Conventional Polarization Sensor]()
-- [Sparse Polarization Sensor (x1/4)]()
+- [Conventional Polarization Sensor](https://sonyjpn.sharepoint.com/:u:/r/sites/S168-RSPDataset/Shared%20Documents/models/model_full_conv.tar?csf=1&web=1&e=7bJYnB)
+- [Sparse Polarization Sensor (x1/4)](https://sonyjpn.sharepoint.com/:u:/r/sites/S168-RSPDataset/Shared%20Documents/models/model_full_x4.tar?csf=1&web=1&e=Z9zsGo)
 - [Sparse Polarization Sensor (x1/16)](https://sonyjpn.sharepoint.com/:u:/r/sites/S168-RSPDataset/Shared%20Documents/models/model_full_x16.tar?csf=1&web=1&e=xwY4hI)
-- [Sparse Polarization Sensor (x1/64)]()
+- [Sparse Polarization Sensor (x1/64)](https://sonyjpn.sharepoint.com/:u:/r/sites/S168-RSPDataset/Shared%20Documents/models/model_full_x64.tar?csf=1&web=1&e=ovgXqt)
 
 *Access to data requires a Microsoft account. After creating your Microsoft account, please contact [us](mailto:Teppei.Kurita@sony.com;Yuhi.Kondo@sony.com) with your Microsoft E-mail address to grant access. The access right is revoked after a certain period of time , and your account information is not retained.
 
