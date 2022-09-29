@@ -133,6 +133,7 @@ python main.py -b 1 -rp x16 --evaluate ../data/models/model_full_x16.tar --data-
                         Polarization compensation model [0,1] (default: 1)
                         # - 0: Our compensation model
                         # - 1: Our compensation model (w/ ATA&FTB) (default)
+                        
   # Hyper Parameter
   --seed N, -se N       seed value. if -1, random seed (default: -1)
   --epochs N            number of total epochs to run (default: 30)
