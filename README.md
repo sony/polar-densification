@@ -74,13 +74,22 @@ python main.py -h
 ```
 ### Training
 ```bash
-CUDA_VISIBLE_DEVICES="0" python main.py -b 5 -rp [conv,x4,x16,x64] --data-folder [data-folder-path] --gt-folder [gt-folder-path] --result [result-folder-path]
+python main.py -b 5 -rp [conv,x4,x16,x64] --data-folder [data-folder-path] --gt-folder [gt-folder-path] --result [result-folder-path]
 # -b for batch size
+```
+Example
+```bash
+python main.py -b 5 -rp x16 --data-folder ../data/rsp-dataset/train_val/x16/ --gt-folder ../data/rsp-dataset/train_val/gt/ --result ../data/results/
 ```
 
 ### Evalution
 ```bash
-CUDA_VISIBLE_DEVICES="0" python main.py -b 1 -rp [conv,x4,x16,x64] --evaluate [checkpoint-path] --data-folder [data-folder-path] --gt-folder [gt-folder-path] --result [result-folder-path]
+python main.py -b 1 -rp [conv,x4,x16,x64] --evaluate [checkpoint-path] --data-folder [data-folder-path] --gt-folder [gt-folder-path] --result [result-folder-path]
+```
+
+Example
+```bash
+python main.py -b 1 -rp x16 --evaluate ../data/models/model_full_x16.tar --data-folder ../data/rsp-dataset/train_val/x16/ --gt-folder ../data/rsp-dataset/train_val/gt/ --result ../data/results/
 ```
 
 ### Optional arguments:
