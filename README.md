@@ -44,6 +44,8 @@ pip install opencv-contrib-python==4.5.2.54
 
 ## Trained Models
 These models are trained on a richer full dataset than rsp-dataset.
+The following four polarization sensor arrays are supported.
+![sensor_array](images/sensor_array.jpg)
 - [Conventional Polarization Sensor](https://sonyjpn.sharepoint.com/:u:/r/sites/S168-RSPDataset/Shared%20Documents/models/model_full_conv.tar?csf=1&web=1&e=7bJYnB)
 - [Sparse Polarization Sensor (x1/4)](https://sonyjpn.sharepoint.com/:u:/r/sites/S168-RSPDataset/Shared%20Documents/models/model_full_x4.tar?csf=1&web=1&e=Z9zsGo)
 - [Sparse Polarization Sensor (x1/16)](https://sonyjpn.sharepoint.com/:u:/r/sites/S168-RSPDataset/Shared%20Documents/models/model_full_x16.tar?csf=1&web=1&e=xwY4hI)
