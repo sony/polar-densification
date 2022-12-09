@@ -160,9 +160,6 @@ def iterate(mode, args, loader, model, optimizer, logger, epoch):
                 optimizer.step()
             print("loss:", loss, " epoch:", epoch, " ", i, "/", len(loader))
 
-        if(not args.evaluate):
-            gpu_time = time.time() - start
-
         if mode != 'train':
             vispred = torch.cat((pred, s0pred), dim=1)
 
