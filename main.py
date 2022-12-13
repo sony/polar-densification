@@ -252,13 +252,10 @@ def main():
 
     print("=> creating model and optimizer ... ", end='')
     model = None
-    penet_accelerated = False
 
     model = select_backbone(args)
     
     model_named_params = None
-    model_bone_params = None
-    model_new_params = None
     optimizer = None
 
     # Load model if checkpoint exists
