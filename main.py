@@ -211,7 +211,6 @@ def select_backbone(args, spsconv=None):
     return model
 
 def main():
-    global args
     checkpoint = None
     is_eval = False
 
@@ -219,14 +218,12 @@ def main():
 
     if args.resume:
         # In Resume mode, reads Checkpoint from args.resume and automatically sets start_epoch
-        args_new = args
         if os.path.isfile(args.resume):
             print("=> loading checkpoint '{}' ... ".format(args.resume),
                   end='')
             checkpoint = torch.load(args.resume, map_location=device)
 
             args.start_epoch = checkpoint['epoch'] + 1
-            args.data_folder = args_new.data_folder
             print("Completed. Resuming from epoch {}.".format(
                 checkpoint['epoch']))
         else:
@@ -235,15 +232,12 @@ def main():
 
     if args.evaluate:
         # Load checkpoint from args.evaluate
-        args_new = args
         if os.path.isfile(args.evaluate):
             print("=> loading checkpoint '{}' ... ".format(args.evaluate),
                   end='')
             checkpoint = torch.load(args.evaluate, map_location=device)
             args.start_epoch = checkpoint['epoch'] + 1
-            args.data_folder = args_new.data_folder
             is_eval = True
-
             print("Completed.")
         else:
             is_eval = True
