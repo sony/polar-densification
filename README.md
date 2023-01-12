@@ -228,6 +228,6 @@ This software is released under the MIT License. See [LICENSE](LICENSE) for deta
     booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
     month     = {January},
     year      = {2023},
-    pages     = {xxx-xxx}
+    pages     = {178-188}
 }
 ```
