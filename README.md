@@ -1,7 +1,7 @@
 # Simultaneous Acquisition of High Quality RGB Image and Polarization Information using a Sparse Polarization Sensor (WACV 2023)
 Teppei Kurita, Yuhi Kondo, Legong Sun and Yusuke Moriuchi\
 Sony Group Corporation, Tokyo, Japan\
-paper([arxiv](https://arxiv.org/abs/2209.13106)/cvf) | [dataset](#dataset)\
+paper([arxiv](https://arxiv.org/abs/2209.13106)/[cvf](https://openaccess.thecvf.com/content/WACV2023/html/Kurita_Simultaneous_Acquisition_of_High_Quality_RGB_Image_and_Polarization_Information_WACV_2023_paper.html)) | [dataset](#dataset)\
 ![teaser_image](images/teaser.jpg)
 
 # SNA: Stokes Network Architecture
