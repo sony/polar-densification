@@ -117,9 +117,18 @@ def calc_dolp_aolp_admap_from_stokes(s0, s1, s2, forvis=False):
     if forvis:
         dolp = dolp ** 0.5
 
-    r = torch.cos(2.0*aolp)*dolp
-    g = torch.sin(2.0*aolp)*dolp
-    b = (1.0-dolp**2.0)**0.5
+    # Exact rational Stokes direction: cos(2*aolp) == s1 / sqrt(s1^2 + s2^2),
+    # sin(2*aolp) == s2 / sqrt(s1^2 + s2^2). Evaluating directly from (s1, s2)
+    # avoids the atan2 -> cos/sin round-trip and its gradient singularity at s1=s2=0.
+    p_norm = torch.sqrt(s1 ** 2 + s2 ** 2)
+    valid_polar = p_norm > 0
+    p_safe = torch.where(valid_polar, p_norm, torch.ones_like(p_norm))
+    cos_2aolp = torch.where(valid_polar, s1 / p_safe, torch.zeros_like(s1))
+    sin_2aolp = torch.where(valid_polar, s2 / p_safe, torch.zeros_like(s2))
+
+    r = cos_2aolp * dolp
+    g = sin_2aolp * dolp
+    b = torch.clamp(1.0 - dolp ** 2.0, min=0.0) ** 0.5
 
     admap = torch.stack([r,g,b], dim=1)
 

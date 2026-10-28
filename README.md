@@ -221,6 +221,35 @@ python main.py -b 1 -rp x16 --evaluate ../data/models/model_full_x16.tar --data-
   --gpu N               GPU device, if -1, use parallel mode (default: -1)
 ```
 
+# 8b-is Extensions: `p/q` Laser Phoenix Densification
+
+`util/laser_phoenix_lattice_pq.py` adds a hardware-deterministic, zero-float path
+on top of `SNA`. It is additive: the original float pipeline in
+`util/polarutils_torch.py` is untouched unless you call the `_pq` or
+`_rational_torch` entry points.
+
+- **Singularity-free Stokes to ADMap.** For `forvis=False` the redundant
+  `sqrt -> atan2 -> cos/sin` chain cancels identically, leaving
+  `r = s1/s0`, `g = s2/s0`, `b = sqrt(max(0, s0^2 - s1^2 - s2^2))/s0`,
+  computed with exact rational division and an integer square root. This removes
+  the `grad(atan2(0,0))` backward singularity on unpolarized pixels.
+- **Laser Phoenix lattice locking.** Phase lives in `Z_2^32` with a CORDIC
+  `atan2`, PLL drift/wrap handling and the five polarization anchors
+  (0, 45, 90, 135, 180 degrees).
+- **Catmull-Rom sparse densification.** `x1/4` and `x1/16` super-pixel grids are
+  restored with rational `p/q` interpolation.
+- **BFP-64 and 64-trit POPCNT feature kernels.** Dense Stokes feature maps pack
+  to 66 bytes per 64 elements (3.88x vs FP32) and project via trit bitplane dot
+  products.
+
+Run the suite:
+
+```bash
+python3 -m unittest tests.test_laser_phoenix_lattice_pq
+# or
+python3 -m unittest discover -s tests -p 'test_*.py'
+```
+
 # License
 This software is released under the MIT License. See [LICENSE](LICENSE) for details.
 
